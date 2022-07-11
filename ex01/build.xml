@@ -8,20 +8,17 @@
     <property name="debuglevel" value="source,lines,vars"/>
     <property name="target" value="17"/>
     <property name="source" value="17"/>
+    <taskdef resource="checkstyletask.properties" classpath="${checkstyle.dir}/checkstyle-10.3.1-all.jar" />
+              	
     <path id="ex01.classpath">
         <pathelement location="bin"/>
     </path>
     <path id="run.Sample01.classpath">
         <path refid="ex01.classpath"/>
     </path>
+              	
     <target name="CheckStyle">
-    	<taskdef resource="checkstyletask.properties"
-    		classpath="${checkstyle.dir}/checkstyle-10.3.1-all.jar" />
-    	
-    	<checkstyle config="checkstyle_checks.xml"
-    		failureProperty="checkstyle.failure"
-    		fainOnViolation="false">
-    		
+    	<checkstyle config="checkstyle_checks.xml" fainOnViolation="false">
     		<formatter type="xml" tofile="checkstyle_report.xml" />
     		
     		<fileset dir="${src.dir}">
@@ -31,13 +28,11 @@
     </target>
     <target name="init">
         <mkdir dir="bin"/>
-        <copy includeemptydirs="false" todir="bin">
             <fileset dir="src">
-                <exclude name="**/*.launch"/>
-                <exclude name="**/*.java"/>
+            	<include name="**/*.java"/>
             </fileset>
-        </copy>
     </target>
+              	
     <target name="clean">
         <delete dir="bin"/>
     </target>
@@ -51,6 +46,7 @@
             <classpath refid="ex01.classpath"/>
         </javac>
     </target>
+              	
     <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
     <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
         <copy todir="${ant.library.dir}">
@@ -61,6 +57,7 @@
             <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
         </unzip>
     </target>
+              	
     <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
         <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
         <antcall target="build"/>
