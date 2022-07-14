@@ -9,6 +9,7 @@
     <property name="project.name" value="ex01"/>
     <property name="project.dir" value="./${project.name}"/>     
     <property name="report.dir" value="${basedir}/report"/>
+    <taskdef name="spotbugs" classname="edu.umd.cs.findbugs.anttask.FindBugsTask" classpath="/tools/spotbugs-4.7.0/lib/spotbugs-ant.jar"/>
     <taskdef resource="com/puppycrawl/tools/checkstyle/ant/checkstyle-ant-task.properties" classpath="C:/tools/checkstyle-8.29-all.jar" />
               	
     <path id="ex01.classpath">
@@ -27,6 +28,14 @@
     	</checkstyle>
     	
     </target>
+              	
+    <target name="spotbugs">
+    <spotbugs home="/opt/spotbugs-4.7.0" output="xml" outputFile="./report/spotbugs_report.xml">
+    <sourcePath path="${project.dir}/src"/>
+    <class location="./class"/>
+    </spotbugs>
+    </target>
+              	
     <target name="init">
         <mkdir dir="bin"/>
             <fileset dir="src">
