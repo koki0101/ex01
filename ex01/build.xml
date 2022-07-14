@@ -8,7 +8,9 @@
     <property name="debuglevel" value="source,lines,vars"/>
     <property name="target" value="17"/>
     <property name="source" value="17"/>
-    <taskdef resource="checkstyletask.properties" classpath="${checkstyle.dir}/checkstyle-10.3.1-all.jar" />
+    <property name="project.name" value="ex01"/>
+    <property name="project.dir" value="./${project.name}"/>          	
+    <taskdef resource="com/puppycrawl/tools/checkstyle/ant/checkstyle-ant-task.properties" classpath="C:/tools/checkstyle-8.29-all.jar" />
               	
     <path id="ex01.classpath">
         <pathelement location="bin"/>
@@ -18,13 +20,13 @@
     </path>
               	
     <target name="CheckStyle">
-    	<checkstyle config="checkstyle_checks.xml" fainOnViolation="false">
-    		<formatter type="xml" tofile="checkstyle_report.xml" />
-    		
-    		<fileset dir="${src.dir}">
-    			<include name="=**/*.java" />
+    	<checkstyle config="www.cs.is.saga-u.ac.jp/lecture/progex3_2022/is_check.xml" fainOnViolation="false">
+    		<formatter type="xml" tofile="./report/checkstyle_report.xml" />
+    		<fileset dir="${project.dir}/src">
+    		<include name="=**/*.java" />
     		</fileset>
     	</checkstyle>
+    	
     </target>
     <target name="init">
         <mkdir dir="bin"/>
