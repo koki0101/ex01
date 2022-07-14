@@ -9,7 +9,8 @@
     <property name="target" value="17"/>
     <property name="source" value="17"/>
     <property name="project.name" value="ex01"/>
-    <property name="project.dir" value="./${project.name}"/>          	
+    <property name="project.dir" value="./${project.name}"/>     
+    <property name="report.dir" value="${basedir}/report"/>
     <taskdef resource="com/puppycrawl/tools/checkstyle/ant/checkstyle-ant-task.properties" classpath="C:/tools/checkstyle-8.29-all.jar" />
               	
     <path id="ex01.classpath">
