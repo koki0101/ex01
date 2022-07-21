@@ -46,7 +46,7 @@
     </target>
               	
     <target name="CheckStyle">
-    	<checkstyle config="www.cs.is.saga-u.ac.jp/lecture/progex3_2022/is_check.xml" fainOnViolation="false">
+    	<checkstyle config="www.cs.is.saga-u.ac.jp/lecture/progex3_2022/is_check.xml" failOnViolation="false">
     		<formatter type="xml" tofile="./report/checkstyle_report.xml" />
     		<fileset dir="${project.dir}/src">
     		<include name="=**/*.java" />
