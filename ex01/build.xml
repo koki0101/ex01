@@ -3,7 +3,7 @@
               Any modifications will be overwritten.
               To include a user specific buildfile here, simply create one in the same
               directory with the processing instruction <?eclipse.ant.import?>
-              as the first entry and export the buildfile again. --><project basedir="." default="build" name="ex01">
+              as the first entry and export the buildfile again. --><project basedir="." default="CheckStyle" name="ex01">
     <property environment="env"/>
     <property name="debuglevel" value="source,lines,vars"/>
     <property name="project.name" value="ex01"/>
@@ -44,7 +44,7 @@
     </target>
               	
     <target name="CheckStyle">
-    	<checkstyle config="www.cs.is.saga-u.ac.jp/lecture/progex3_2022/is_check.xml" failOnViolation="false">
+    	<checkstyle config="C:/tools/checkstyle-8.29-all.jar/sun_checks.xml"  failOnViolation="false">
     		<formatter type="xml" tofile="./report/checkstyle_report.xml" />
     		<fileset dir="${project.dir}/src">
     		<include name="=**/*.java" />
