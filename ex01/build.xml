@@ -15,12 +15,10 @@
     <taskdef name="spotbugs" classname="edu.umd.cs.findbugs.anttask.FindBugsTask" classpath="/tools/spotbugs-4.7.0/lib/spotbugs-ant.jar"/>
     <taskdef resource="com/puppycrawl/tools/checkstyle/ant/checkstyle-ant-task.properties" classpath="C:/tools/checkstyle-8.29-all.jar" />
               	
-    <path id="ex01.classpath">
-        <pathelement location="bin"/>
-    </path>
-    <path id="run.Sample01.classpath">
-        <path refid="ex01.classpath"/>
-    </path>
+              	
+    <target name="delclass">
+    	<delete dir="${class.dir}" verbose="true"/>
+    </target>
               	
     <target name="mkclass">
     	<mkdir dir="${class.dir}"/>
