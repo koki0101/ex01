@@ -3,7 +3,7 @@
               Any modifications will be overwritten.
               To include a user specific buildfile here, simply create one in the same
               directory with the processing instruction <?eclipse.ant.import?>
-              as the first entry and export the buildfile again. --><project basedir="." default="compile_check" name="ex01">
+              as the first entry and export the buildfile again. --><project basedir="." default="CheckStyle" name="ex01">
     <property environment="env"/>
     <property name="debuglevel" value="source,lines,vars"/>
     <property name="project.name" value="ex01"/>
@@ -31,7 +31,7 @@
     
     <target name="compile_check">
     	<path id="compile-classpath">
-    	<fileset dir="/usr/share/java">
+    	<fileset dir="C:/tools">
     	<include name="**/*.jar"/>
     	
     	</fileset>
