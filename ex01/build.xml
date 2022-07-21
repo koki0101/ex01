@@ -8,7 +8,10 @@
     <property name="debuglevel" value="source,lines,vars"/>
     <property name="project.name" value="ex01"/>
     <property name="project.dir" value="./${project.name}"/>     
+    <property name="class.dir" value="./${basedir}/class"/>
+    <property name="class.fail.dir" value="./${class.dir}/failClass"/>
     <property name="report.dir" value="${basedir}/report"/>
+    <property name="report.fail.dir" value="${report.dir}/failReport"/>
     <taskdef name="spotbugs" classname="edu.umd.cs.findbugs.anttask.FindBugsTask" classpath="/tools/spotbugs-4.7.0/lib/spotbugs-ant.jar"/>
     <taskdef resource="com/puppycrawl/tools/checkstyle/ant/checkstyle-ant-task.properties" classpath="C:/tools/checkstyle-8.29-all.jar" />
               	
@@ -18,6 +21,13 @@
     <path id="run.Sample01.classpath">
         <path refid="ex01.classpath"/>
     </path>
+              	
+    <target name="mkclass">
+    	<mkdir dir="${class.dir}"/>
+    	<mkdir dir="${class.fail.dir}"/>
+    	<mkdir dir="${report.fail.dir}"/>
+              	
+    </target>
               	
     <target name="CheckStyle">
     	<checkstyle config="www.cs.is.saga-u.ac.jp/lecture/progex3_2022/is_check.xml" fainOnViolation="false">
