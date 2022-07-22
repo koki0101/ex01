@@ -16,89 +16,23 @@
     <taskdef resource="com/puppycrawl/tools/checkstyle/ant/checkstyle-ant-task.properties" classpath="C:/tools/checkstyle-8.29-all.jar" />
               	
               	
-    <target name="delclass">
-    	<delete dir="${class.dir}" verbose="true"/>
-    </target>
-              	
-    <target name="mkclass">
-    	<mkdir dir="${class.dir}"/>
-    	<mkdir dir="${class.fail.dir}"/>
-    	<mkdir dir="${report.fail.dir}"/>
-    	
-    </target>
-    
-    <target name="compile_check">
-    	<path id="compile-classpath">
-    	<fileset dir="C:/tools">
-    	<include name="**/*.jar"/>
-    	
-    	</fileset>
-    	<pathelement path="${class.dir}"/>
-    	
-    	</path>
-    	<javac srcdir="${project.dir}/src" destdir="${class.dir}" debug="on" includeantruntime="false">
-    	<classpath refid="compile-classpath"/>
-    	
-    	</javac>
-    	
-    </target>
               	
     <target name="checkstyle">
     	<checkstyle config="C:/tools/checkstyle-8.29-all.jar/sun_checks.xml"  failOnViolation="false">
     		<formatter type="xml" tofile="./report/checkstyle_report.xml" />
     		<fileset dir="${project.dir}/src">
-    		<include name="=**/*.java" />
+    			<include name="=**/*.java" />
     		</fileset>
     	</checkstyle>
     	
     </target>
               	
     <target name="spotbugs">
-    <spotbugs home="C:\tools\spotbugs-4.7.0" output="xml" outputFile="./report/spotbugs_report.xml">
-    <sourcePath path="${project.dir}/src"/>
-    <class location="./class"/>
-    </spotbugs>
+    	<spotbugs home="C:/tools/spotbugs-4.7.0" output="xml" outputFile="./report/spotbugs_report.xml">
+   	 			<sourcePath path="${project.dir}/src"/>
+    			<class location="./class"/>
+    	</spotbugs>
     </target>
               	
-    <target name="init">
-        <mkdir dir="bin"/>
-            <fileset dir="src">
-            	<include name="**/*.java"/>
-            </fileset>
-    </target>
-              	
-    <target name="clean">
-        <delete dir="bin"/>
-    </target>
-    <target depends="clean" name="cleanall"/>
-    <target depends="build-subprojects,build-project" name="build"/>
-    <target name="build-subprojects"/>
-    <target depends="init" name="build-project">
-        <echo message="${ant.project.name}: ${ant.file}"/>
-        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
-            <src path="src"/>
-            <classpath refid="ex01.classpath"/>
-        </javac>
-    </target>
-              	
-    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
-    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
-        <copy todir="${ant.library.dir}">
-            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
-        </copy>
-        <unzip dest="${ant.library.dir}">
-            <patternset includes="jdtCompilerAdapter.jar"/>
-            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
-        </unzip>
-    </target>
-              	
-    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
-        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
-        <antcall target="build"/>
-    </target>
-    <target name="Sample01">
-        <java classname="ex01.Sample01" failonerror="true" fork="yes">
-            <classpath refid="run.Sample01.classpath"/>
-        </java>
-    </target>
+    
 </project>
