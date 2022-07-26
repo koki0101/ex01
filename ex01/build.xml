@@ -30,7 +30,7 @@
               	
     <target name="spotbugs">
     	<spotbugs home="C:\tools\spotbugs-4.7.0" output="xml" outputFile="./report/spotbugs_report.xml">
-   	 			<sourcePath path="${project.dir}/src"/>
+   	 			<sourcePath path="${project.dir}/src/ex01"/>
     			<class location="./class"/>
     	</spotbugs>
     </target>
