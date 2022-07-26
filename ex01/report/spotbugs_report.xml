@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="4.7.0" sequence="0" timestamp="1658827848011" analysisTimestamp="1658827848016" release="">
+  <Project projectName="">
+    <Jar>C:\Users\koki ono\git\ex01\ex01\bin\ex01</Jar>
+    <SrcDir>C:\Users\koki ono\git\ex01\ex01\ex01\src</SrcDir>
+  </Project>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Tue, 26 Jul 2022 18:30:48 +0900" total_classes="1" referenced_classes="15" total_bugs="0" total_size="7" num_packages="1" java_version="17.0.3" vm_version="17.0.3+7" cpu_seconds="3.97" clock_seconds="1.38" peak_mbytes="202.43" alloc_mbytes="4046.00" gc_seconds="0.01">
+    <PackageStats package="ex01" total_bugs="0" total_types="1" total_size="7">
+      <ClassStats class="ex01.Sample01" sourceFile="Sample01.java" interface="false" size="7" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="402" invocations="400" avgMicrosecondsPerInvocation="1007" maxMicrosecondsPerInvocation="5352" standardDeviationMicrosecondsPerInvocation="1763"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="239" invocations="398" avgMicrosecondsPerInvocation="601" maxMicrosecondsPerInvocation="25186" standardDeviationMicrosecondsPerInvocation="1655"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="40" invocations="15" avgMicrosecondsPerInvocation="2718" maxMicrosecondsPerInvocation="9274" standardDeviationMicrosecondsPerInvocation="3175"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="39" invocations="72" avgMicrosecondsPerInvocation="549" maxMicrosecondsPerInvocation="10253" standardDeviationMicrosecondsPerInvocation="1238"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="29" invocations="2" avgMicrosecondsPerInvocation="14988" maxMicrosecondsPerInvocation="29594" standardDeviationMicrosecondsPerInvocation="14606"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="25" invocations="33" avgMicrosecondsPerInvocation="771" maxMicrosecondsPerInvocation="15002" standardDeviationMicrosecondsPerInvocation="2586"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History></History>
+</BugCollection>
