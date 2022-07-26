@@ -3,7 +3,7 @@
               Any modifications will be overwritten.
               To include a user specific buildfile here, simply create one in the same
               directory with the processing instruction <?eclipse.ant.import?>
-              as the first entry and export the buildfile again. --><project basedir="." default="checkstyle" name="ex01">
+              as the first entry and export the buildfile again. --><project basedir="." default="spotbugs" name="ex01">
     <property environment="env"/>
     <property name="debuglevel" value="source,lines,vars"/>
     <property name="project.name" value="ex01"/>
@@ -16,7 +16,7 @@
     <taskdef resource="com/puppycrawl/tools/checkstyle/ant/checkstyle-ant-task.properties" classpath="C:/tools/checkstyle-8.29-all.jar" />
               	
               	
-              	
+   <!--        	
     <target name="checkstyle">
     	<checkstyle config="C:\tools\checkstyle-8.29-all.jar\sun_checks.xml"  failOnViolation="false">
     		<formatter type="xml" tofile="./report/checkstyle_report.xml" />
@@ -26,6 +26,7 @@
     	</checkstyle>
     	
     </target>
+    -->
               	
     <target name="spotbugs">
     	<spotbugs home="C:\tools\spotbugs-4.7.0" output="xml" outputFile="./report/spotbugs_report.xml">
