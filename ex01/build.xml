@@ -31,7 +31,7 @@
     <target name="spotbugs">
     	<spotbugs home="C:\tools\spotbugs-4.7.0" output="xml" outputFile="./report/spotbugs_report.xml">
    	 			<sourcePath path="${project.dir}/src"/>
-    			<class location="${project.dir}/src"/>
+    			<class location="C:\Users\koki ono\git\ex01\ex01\bin\ex01"/>
     	</spotbugs>
     </target>
               	
