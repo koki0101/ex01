@@ -20,7 +20,7 @@
     <target name="checkstyle">
     	<checkstyle config="C:\tools\sun_checks.xml"  failOnViolation="false">
     		<formatter type="xml" tofile="./report/checkstyle_report.xml" />
-    		<fileset dir="./src">
+    		<fileset dir="./src/ex01">
     			<include name="=**/*.java" />
     		</fileset>
     	</checkstyle>
