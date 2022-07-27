@@ -21,7 +21,7 @@
     	<checkstyle config="C:\tools\sun_checks.xml"  failOnViolation="false">
     		<formatter type="xml" tofile="./report/checkstyle_report.xml" />
     		<fileset dir="./src">
-    			<include name="Sample01.java"/>
+    			<include name="*.java"/>
     		</fileset>
     	</checkstyle>
     	
